@@ -1,0 +1,49 @@
+$sql ="SELECT id, longitude, latitude, humidity ,pressure, temperature,date_time FROM data" ;
+$result = $conn->query($sql);
+?>
+
+<?php
+if ($result->num_rows >0) {
+    # we output that data here
+?>
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <td>Id</td>
+      <td>Lattitude</td>
+      <td>Longitude</td>
+      <td>Humidity</td>
+      <td>pressure</td>
+      <td>Temperature</td>
+      <td>Date_Time</td>
+    </tr>
+  </thead>
+  <?php
+  $i=0;
+    while ($row = $result->fetch_assoc()) {
+      
+    ?>
+  
+  <tbody>
+    <tr>
+      
+      <td><?php echo $row["id"];?></td>
+      <td><?php echo $row["latitude"];?></td>
+      <td><?php echo $row["longitude"];?></td>
+      <td><?php echo $row["humidity"];?></td>
+      <td><?php echo $row["pressure"];?></td>
+      <td><?php echo $row["temperature"];?></td>
+      <td><?php echo $row["date_time"];?></td>
+    </tr>
+  </tbody>
+  <?php
+    $i++;
+    }
+  ?>
+</table>
+<?php 
+    }else {
+    echo "no results";
+    }
+   $conn->close();

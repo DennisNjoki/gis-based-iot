@@ -2,14 +2,14 @@
 
 $server = "localhost";
 $username = "root";
-$password = "";
+$password = "dennis12njoki";
 $database = "denno";
 
 /*Create database connection with correct username and password*/
-$connect = new mysqli($server,$username,$password,$database);
+$conn = new mysqli($server,$username,$password,$database);
 
 /* Check the connection is created properly*/
-if(!$connect){
+if(!$conn){
 	die("Could not connect to database!!:" .mysql_error());
 }
 ?>

@@ -1985,3 +1985,7 @@ ul.bottom_menu li {
 .top-header.fixed-menu ul li:focus a {
 	color: #0892fd !important;
 }
+/* styling the map section */
+.mapdisplay{
+	margin: 20 10 10;
+}
