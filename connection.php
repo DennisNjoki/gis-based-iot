@@ -2,8 +2,8 @@
 
 $server = "localhost";
 $username = "root";
-$password = "dennis12njoki";
-$database = "denno";
+$password = "";
+$database = "iot";
 
 /*Create database connection with correct username and password*/
 $conn = new mysqli($server,$username,$password,$database);
