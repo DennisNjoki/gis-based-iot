@@ -1,6 +1,6 @@
 <?php
 include "connection.php";
-$results = mysqli_query($conn,"SELECT * FROM data");
+$results = mysqli_query($conn,"SELECT * FROM spatial_data");
 ?>
 <!DOCTYPE html>
 <html>
@@ -8,7 +8,7 @@ $results = mysqli_query($conn,"SELECT * FROM data");
 	<!-- <title>Map Data</title> -->
 	<link rel="stylesheet" href="css/data.css">
 </head>
-<body>
+<body> 
 <?php
 if (mysqli_num_rows($results) >0){
 ?>
@@ -34,7 +34,7 @@ if (mysqli_num_rows($results) >0){
 		<td><?php echo $row["humidity"];?></td>
 		<td><?php echo $row["pressure"];?></td>
 		<td><?php echo $row["temperature"];?></td>
-		<td><?php echo $row["date_time"];?></td>
+		<td><?php echo $row["date-time"];?></td>
 	</tr>
 <?php
 		$i++;

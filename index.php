@@ -192,7 +192,7 @@
             </div>
             <div class="col-md-3 footer3 wow bounceInRight" data-wow-delay=".25s">
               <h5>ADDRESS</h5>
-              <p>Nyeri, First Street</p>
+              <p>Nyeri, CBD</p>
               <h5>PHONE</h5>
               <p><a href="# ">+254748387787</a></p>
               <h5>EMAIL</h5>

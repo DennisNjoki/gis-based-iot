@@ -1,6 +1,6 @@
 <?php
 include "connection.php";
-$sql ="SELECT id, longitude, latitude, humidity ,pressure, temperature FROM data" ;
+$sql ="SELECT id, longitude, latitude, humidity ,pressure, temperature FROM spatial_data" ;
 $result = $conn->query($sql);
 
 if ($result->num_rows >0) {
@@ -13,6 +13,8 @@ if ($result->num_rows >0) {
 }
 $conn->close();
 
+$page = $_SERVER['PHP_SELF'];
+$sec = "10";
 
 ?>
 <!DOCTYPE html>
@@ -22,7 +24,8 @@ $conn->close();
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
+    <!-- auto reload meta tag -->
+    <!-- <meta http-equiv="refresh" content="<?php echo $sec?>;URL='<?php echo $page?>'"> -->
     <!-- Mobile Metas -->
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
@@ -148,7 +151,6 @@ $conn->close();
 <?php
 include "connection.php";
 include "php/retrieve.php";
-//sql statement to select
 ?>
 </div>
 
@@ -209,7 +211,7 @@ include_once "map.php"
             </div>
             <div class="col-md-3 footer3 wow bounceInRight" data-wow-delay=".25s">
               <h5>ADDRESS</h5>
-              <p>Nyeri, First Street</p>
+              <p>Nyeri, CBD</p>
               <h5>PHONE</h5>
               <p><a href="# ">+254748387787</a></p>
               <h5>EMAIL</h5>
@@ -257,6 +259,8 @@ include_once "map.php"
     <script src="js/isotope.min.js"></script>
     <script src="js/images-loded.min.js"></script>
     <script src="js/custom.js"></script>
+  <!-- leaflet javascrip -->
+  
 	<script>
 	/* counter js */
  

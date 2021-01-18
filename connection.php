@@ -5,6 +5,8 @@ $username = "root";
 $password = "";
 $database = "iot";
 
+$dsn        = "mysql:host=$server;dbname=$database";
+
 /*Create database connection with correct username and password*/
 $conn = new mysqli($server,$username,$password,$database);
 
