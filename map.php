@@ -7,8 +7,11 @@
 <head>
 	<meta charset="utf-8">
 	<title>MY MAP</title>
-	<link rel="stylesheet" type="text/css" href="leaflet/leaflet.css">
-	<script src="leaflet.js"></script>
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"/>
+   <!-- Make sure you put this AFTER Leaflet's CSS -->
+ <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+	<!-- <link rel="stylesheet" type="text/css" href="leaflet/leaflet.css"> -->
+	<!-- <script src="leaflet.js"></script> -->
 
 
 
@@ -38,25 +41,22 @@
 			var osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 				attribution: '&copy; <a href="https://www.openstreetmap.org/copyright"></a> IoT and GIS'
 			}).addTo(map);
-
+			// var marker = L.marker([-0.416665, 36.9499962],).addTo(map).bindPopup('data').openPopup();
 
 			// var blueIcon =  new normal_icon ({imageUrl: 'leaflet/images/marker-icon-2x.png'}),
+
 		<?php
-			$result = mysqli_query($conn,"SELECT latitude,longitude,humidity,temperature,pressure,date-time FROM spatial_data WHERE latitude is not NULL or longitude is not NULL or humidity is not NULL or temperature is not NULL or Pressure is not NULLor date-time is not NULL");
-			
+			$conn = new mysqli("localhost" ,"root", "","iot");
+			$result = mysqli_query($conn,"SELECT latitude,longitude,humidity,temperature,pressure FROM spatial_data WHERE latitude is not NULL or longitude is not NULL or humidity is not NULL or temperature is not NULL or Pressure is not NULL");
+
         while ($row = mysqli_fetch_assoc($result)) {
-            ?>
-             var marker = L.marker([<?php echo $row['latitude']?>,<?php echo $row['longitude'] ?>]).addTo(map); 
+			?>
+			
+			 var marker = L.marker([<?php echo $row['latitude']?>,<?php echo $row['longitude'] ?>]).addTo(map).bindPopup(<?php echo "the humidity is: " $row['humidity'] ?>); 
+			 
              <?php
-        }
-        ?>  
-			
-			var marker = L.marker([-0.416665, 36.9499962],).addTo(map).bindPopup('data').openPopup();
-			
-
-			// L.tileLayer.provider('Stamen.Watercolor').addTo(map);
-			
-
+ 			       }
+		       ?>  
 
 		</script>
 
