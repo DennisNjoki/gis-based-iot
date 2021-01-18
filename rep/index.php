@@ -36,11 +36,11 @@
             .openPopup();
             <?php
         $conn = new mysqli("localhost" ,"root", "","iot");
-        $result = mysqli_query($conn,"SELECT latitude,longitude FROM spatial_data WHERE latitude is not NULL or longitude is not NULL");
+        $result = mysqli_query($conn,"SELECT latitude,longitude,humidity,temperature,pressure FROM spatial_data WHERE latitude is not NULL or longitude is not NULL or humidity is not NULL or temperature is not NULL or Pressure is not NULL");
         while ($row = mysqli_fetch_assoc($result)) {
             ?>
-             var marker = L.marker([<?php echo $row['latitude']?>,<?php echo $row['longitude'] ?>]).addTo(map); 
-             <?php
+             var marker = L.marker([<?php echo $row['latitude']?>,<?php echo $row['longitude'] ?>]).addTo(map).bindPopup(<?php echo  $row['humidity'] ?>).openPopup(); 
+			  <?php
         }
         ?>    
     </script>
