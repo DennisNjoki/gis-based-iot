@@ -53,7 +53,7 @@
 			?>
 			
 			 var marker = L.marker([<?php echo $row['latitude']?>,<?php echo $row['longitude'] ?>]).addTo(map).bindPopup(<?php echo $row['humidity'] ?>); 
-			 git
+			
              <?php
  			       }
 		       ?>  
