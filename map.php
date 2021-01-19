@@ -1,5 +1,5 @@
 <?php
- require "connection.php";
+ include "connection.php";
 ?>
 <!DOCTYPE html>
 <html>
@@ -52,8 +52,8 @@
         while ($row = mysqli_fetch_assoc($result)) {
 			?>
 			
-			 var marker = L.marker([<?php echo $row['latitude']?>,<?php echo $row['longitude'] ?>]).addTo(map).bindPopup(<?php echo git$row['humidity'] ?>); 
-			 
+			 var marker = L.marker([<?php echo $row['latitude']?>,<?php echo $row['longitude'] ?>]).addTo(map).bindPopup(<?php echo $row['humidity'] ?>); 
+			 git
              <?php
  			       }
 		       ?>  
