@@ -28,7 +28,7 @@ def getData():
     return data
 
 def postData(payload):
-    #url = "http://192.168.43.214/denno/hardware/postespdata.php"
+    #url = "http://192.168.43.214/denno/hardware/postespdata.php/"
     url = "http://gis-based-iot.epizy.com/postespdata.php"
     #extract data from the data dict to make the http post
     temp = hum = pres = lat = lon = 0
@@ -42,8 +42,9 @@ def postData(payload):
     headers = {'content-type':'application/x-www-form-urlencoded'}
     try:
         response = requests.post(url,data=data,headers=headers)
+        print(response.text)
         response.close()
-        print("Record added successfully!!")
+        #print("Record added successfully!!")
     except OSError:
         #handle os error 23
         print ("The fucking Error 23  Encountered")
