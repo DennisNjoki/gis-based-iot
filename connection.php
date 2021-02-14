@@ -1,11 +1,10 @@
 <?php
 
-$server = "localhost";
-$username = "root";
-$password = "";
-$database = "iot";
+$server = "sql105.epizy.com";
+$username = "epiz_27834352";
+$password = "ctDHFJ9XCAMuk";
+$database = "epiz_27834352_iot";
 
-$dsn        = "mysql:host=$server;dbname=$database";
 
 /*Create database connection with correct username and password*/
 $conn = new mysqli($server,$username,$password,$database);
