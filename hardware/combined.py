@@ -53,4 +53,4 @@ def postData(payload):
 while (1):
     #getData()
     postData(getData())
-    time.sleep(600)
+    time.sleep(10)
