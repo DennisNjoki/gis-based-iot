@@ -7,13 +7,3 @@ gps = MicropyGPS()
 buf = uart.readline()
 print("Nmea data:")
 print(buf)
-for char in buf:
-    gps.update(chr(char))  # Note the conversion to to chr, UART outputs
-print('UTC Timestamp:', gps.timestamp)
-print('Date:', gps.date_string('long'))
-print('Latitude:', gps.latitude)
-print('Longitude:', gps.longitude_string())
-print('Horizontal Dilution of Precision:', gps.hdop)
-print('Altitude:', gps.altitude)
-print('Satellites:', gps.satellites_in_use)
-print()
