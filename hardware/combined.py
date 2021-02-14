@@ -28,7 +28,8 @@ def getData():
     return data
 
 def postData(payload):
-    url = "http://192.168.43.214/denno/hardware/postespdata.php"
+    #url = "http://192.168.43.214/denno/hardware/postespdata.php"
+    url = "http://gis-based-iot.epizy.com/postespdata.php"
     #extract data from the data dict to make the http post
     temp = hum = pres = lat = lon = 0
     temp = payload["temperature"]
